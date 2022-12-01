@@ -68,7 +68,7 @@ else
 		echo 
 		echo "        "$package" will be installed with pacman        "
 		echo 
-		pacman -S --noconfirm $package
+		sudo pacman -S --noconfirm $package
 
 	fi
 
