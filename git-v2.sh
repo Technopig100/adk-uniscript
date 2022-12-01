@@ -16,9 +16,6 @@
 # git commit --amend -m "more info"
 # git push --force origin
 
-echo "Deleting the work folder if one exists"
-[ -d work ] && rm -rf work
-
 # checking if I have the latest files from github
 echo "Checking for newer files online first"
 git pull
@@ -39,7 +36,7 @@ git commit -m "$input"
 
 # Push the local files to github
 
-git push -u origin master
+git push -u origin main
 
 
 echo "################################################################"
