@@ -12,12 +12,12 @@ echo
 #----------------------------------------------------------------------------------
 
 #checking which helper is installed
-if pacman -Qi yay &> /dev/null; then
+if pacman -Qi pamac &> /dev/null; then
 
 		echo 
-		echo "          Update will be preformed with yay           "
+		echo "          Update will be preformed with pamac           "
 		echo 
-		yay -Syyu --noconfirm
+		pamac update --no-confirm
 
 	elif pacman -Qi trizen &> /dev/null; then
 
@@ -47,19 +47,19 @@ if pacman -Qi yay &> /dev/null; then
 		echo 
 		packer -Syyu --noconfirm --noedit
 
-	elif pacman -Qi pamac &> /dev/null; then
+	elif pacman -Qi yay &> /dev/null; then
 
 		echo 
-		echo "        Update will be preformed with pamac           "
+		echo "        Update will be preformed with yay           "
 		echo 
-		pamac update --no-confirm
+		yay -Syyu --noconfirm
 
 	elif pacman -Qi pacman &> /dev/null; then
 
 		echo 
 		echo "        Update will be preformed with pacman           "
 		echo 
-		pacman -Syyu --no-confirm
+		pacman -Syyu --noconfirm
 
 
 	fi

@@ -21,12 +21,12 @@ if pacman -Qi $package &> /dev/null; then
 else
 
 	#checking which helper is installed
-	if pacman -Qi yay &> /dev/null; then
+	if pacman -Qi pamac &> /dev/null; then
 
 		echo 
-		echo "            "$package" will be installed with yay               "
+		echo "            "$package" will be installed with pamac               "
 		echo 
-		yay -S --noconfirm $package
+		pamac install --no-confirm $package
 
 	elif pacman -Qi trizen &> /dev/null; then
 
@@ -56,19 +56,19 @@ else
 		echo 
 		packer -S --noconfirm --noedit  $package
 
-	elif pacman -Qi pamac &> /dev/null; then
+	elif pacman -Qi yay &> /dev/null; then
 
 		echo 
-		echo "       "$package" will be installed with pamac         "
+		echo "       "$package" will be installed with yay         "
 		echo 
-		pamac install --no-confirm $package
+		yay -S --noconfirm $package
 
 	elif pacman -Qi pacman &> /dev/null; then
 
 		echo 
 		echo "        "$package" will be installed with pacman        "
 		echo 
-		pacman -S --no-confirm $package
+		pacman -S --noconfirm $package
 
 	fi
 

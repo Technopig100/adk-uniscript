@@ -11,13 +11,22 @@ package="$pkg"
 
 #----------------------------------------------------------------------------------
 
-#checking which helper is installed
-if pacman -Qi yay &> /dev/null; then
+#checking if application is already installed or else install with aur helpers
+if ! pacman -Qi $package &> /dev/null; then
+
+		echo
+		echo "           "$package" is not installed                      "
+		echo
+
+else
+
+    #checking which helper is installed
+    if pacman -Qi pamac &> /dev/null; then
 
 		echo 
-		echo "          "$package" will be removed with yay           "
+		echo "          "$package" will be removed with pamac           "
 		echo 
-		yay -R --noconfirm $package
+		pamac remove --no-confirm $package
 
 	elif pacman -Qi trizen &> /dev/null; then
 
@@ -47,12 +56,12 @@ if pacman -Qi yay &> /dev/null; then
 		echo 
 		packer -R --noconfirm --noedit  $package
 
-	elif pacman -Qi pamac &> /dev/null; then
+	elif pacman -Qi yay &> /dev/null; then
 
 		echo 
-		echo "        "$package" will be removed with pamac           "
+		echo "        "$package" will be removed with yay           "
 		echo 
-		pamac remove --no-confirm $package
+		yay -R --noconfirm $package
 
 	elif pacman -Qi pacman &> /dev/null; then
 
@@ -75,5 +84,5 @@ if pacman -Qi yay &> /dev/null; then
 		echo 
 		echo "          "$package" was removed successfully           "
 		echo 
-
+    fi
 fi
