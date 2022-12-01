@@ -59,7 +59,7 @@ if pacman -Qi pamac &> /dev/null; then
 		echo 
 		echo "        Update will be preformed with pacman           "
 		echo 
-		pacman -Syyu --noconfirm
+		sudo pacman -Syyu --noconfirm
 
 
 	fi
