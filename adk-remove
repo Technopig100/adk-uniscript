@@ -68,7 +68,7 @@ else
 		echo 
 		echo "        "$package" will be removed with pacman           "
 		echo 
-		sudo pacman -R --no-confirm $package
+		sudo pacman -R --noconfirm $package
 
 	fi
 
