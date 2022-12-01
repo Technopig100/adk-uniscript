@@ -61,7 +61,6 @@ if pacman -Qi pamac &> /dev/null; then
 		echo 
 		sudo pacman -Syyu --noconfirm
 
-
 	fi
 
 	# Just checking if installation was successful
@@ -76,6 +75,5 @@ if pacman -Qi pamac &> /dev/null; then
 		echo 
 		printf '\e[1;34m%-6s\e[m' "          ADK-Linux is up-to-update!!  "
 		echo 
-
-
 fi
+
