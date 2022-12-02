@@ -76,7 +76,7 @@ else
 	if pacman -Qi $package &> /dev/null; then
 
 		echo 
-		echo "        "$package" was installed seccessfull            "
+		echo "        "$package" was installed successfully            "
 		echo 
 
 	else
